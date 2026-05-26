@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}РџСѓР±Р»РёРєР°С†РёСЏ {{ post.id }}{% endblock %}
+
+{% block content %}
+  <article class="post-detail">
+    <div class="post-meta">
+      <span>{{ post.date }}</span>
+      <a href="{% url 'blog:category_posts' post.category %}">
+        {{ post.category }}
+      </a>
+    </div>
+    <h1>РџСѓР±Р»РёРєР°С†РёСЏ #{{ post.id }}</h1>
+    <p class="post-location">{{ post.location }}</p>
+    <p>{{ post.text|linebreaksbr }}</p>
+  </article>
+{% endblock %}
