@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}Р‘Р»РѕРіРёРєСѓРј{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Lora:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav">
+        <a class="logo" href="{% url 'blog:index' %}">Р‘Р»РѕРіРёРєСѓРј</a>
+        <div class="nav-links">
+          <a href="{% url 'blog:index' %}">Р›РµРЅС‚Р°</a>
+          <a href="{% url 'pages:about' %}">Рћ РїСЂРѕРµРєС‚Рµ</a>
+          <a href="{% url 'pages:rules' %}">РџСЂР°РІРёР»Р°</a>
+        </div>
+      </nav>
+    </header>
+    <main class="container">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="site-footer">
+      <p>Р›РёС‡РЅС‹Рµ РґРЅРµРІРЅРёРєРё, С…РѕСЂРѕС€РёРµ РёСЃС‚РѕСЂРёРё Рё Р±РµСЂРµР¶РЅР°СЏ РјРѕРґРµСЂР°С†РёСЏ.</p>
+    </footer>
+  </body>
+</html>
