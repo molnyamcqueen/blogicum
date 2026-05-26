@@ -1,11 +1,11 @@
 {% extends "base.html" %}
 
-{% block title %}Р›РµРЅС‚Р° РїСѓР±Р»РёРєР°С†РёР№{% endblock %}
+{% block title %}Лента публикаций{% endblock %}
 
 {% block content %}
   <section class="page-intro">
-    <p class="eyebrow">Р›РµРЅС‚Р°</p>
-    <h1>РџСѓР±Р»РёРєР°С†РёРё Р°РІС‚РѕСЂРѕРІ</h1>
+    <p class="eyebrow">Лента</p>
+    <h1>Публикации авторов</h1>
   </section>
   <section class="post-list">
     {% for post in posts %}
@@ -19,7 +19,7 @@
         <p class="post-location">{{ post.location }}</p>
         <p>{{ post.text|linebreaksbr }}</p>
         <a class="post-link" href="{% url 'blog:post_detail' post.id %}">
-          Р§РёС‚Р°С‚СЊ РїРѕР»РЅРѕСЃС‚СЊСЋ
+          Читать полностью
         </a>
       </article>
     {% endfor %}
