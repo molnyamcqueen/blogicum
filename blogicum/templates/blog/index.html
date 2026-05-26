@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}Р›РµРЅС‚Р° РїСѓР±Р»РёРєР°С†РёР№{% endblock %}
+
+{% block content %}
+  <section class="page-intro">
+    <p class="eyebrow">Р›РµРЅС‚Р°</p>
+    <h1>РџСѓР±Р»РёРєР°С†РёРё Р°РІС‚РѕСЂРѕРІ</h1>
+  </section>
+  <section class="post-list">
+    {% for post in posts %}
+      <article class="post-card">
+        <div class="post-meta">
+          <span>{{ post.date }}</span>
+          <a href="{% url 'blog:category_posts' post.category %}">
+            {{ post.category }}
+          </a>
+        </div>
+        <p class="post-location">{{ post.location }}</p>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <a class="post-link" href="{% url 'blog:post_detail' post.id %}">
+          Р§РёС‚Р°С‚СЊ РїРѕР»РЅРѕСЃС‚СЊСЋ
+        </a>
+      </article>
+    {% endfor %}
+  </section>
+{% endblock %}
