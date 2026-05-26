@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}РџСѓР±Р»РёРєР°С†РёСЏ {{ post.id }}{% endblock %}
+{% block title %}Публикация {{ post.id }}{% endblock %}
 
 {% block content %}
   <article class="post-detail">
@@ -10,7 +10,7 @@
         {{ post.category }}
       </a>
     </div>
-    <h1>РџСѓР±Р»РёРєР°С†РёСЏ #{{ post.id }}</h1>
+    <h1>Публикация #{{ post.id }}</h1>
     <p class="post-location">{{ post.location }}</p>
     <p>{{ post.text|linebreaksbr }}</p>
   </article>
